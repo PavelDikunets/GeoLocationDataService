@@ -15,9 +15,10 @@ public class GeoLocationDataService : IGeoLocationDataService
     private readonly IOpenStreetMapService _openStreetMapService;
 
     /// <summary>
+    /// Инициализирует экземпляр <see cref="GeoLocationDataService"/>.
     /// </summary>
-    /// <param name="openStreetMapService"></param>
-    /// <param name="logger"></param>
+    /// <param name="openStreetMapService">Сервис для работы с внешним API OpenStreetMap.</param>
+    /// <param name="logger">Логгер.</param>
     public GeoLocationDataService(IOpenStreetMapService openStreetMapService, ILogger<GeoLocationDataService> logger)
     {
         _openStreetMapService = openStreetMapService;
@@ -44,8 +45,11 @@ public class GeoLocationDataService : IGeoLocationDataService
             throw new OpenStreetMapException(errorDto.Error.Message, responseMessage.StatusCode);
         }
 
-        var geoData = JsonConvert.DeserializeObject<List<GeoLocationDto>>(content);
+        var geoLocationData = JsonConvert.DeserializeObject<List<GeoLocationDto>>(content);
 
-        return geoData;
+        _logger.LogInformation("Геоданные успешно получены: {GeoLocationData}",
+            JsonConvert.SerializeObject(geoLocationData));
+        
+        return geoLocationData;
     }
 }
