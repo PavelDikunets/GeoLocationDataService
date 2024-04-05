@@ -24,6 +24,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoLocation.Contracts", "sr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoLocation.Host.Api", "src\GeoLocation\Host\GeoLocation.Host.Api\GeoLocation.Host.Api.csproj", "{9358494B-EAD6-4FF9-A178-C0FE0B75B403}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExternalApi", "ExternalApi", "{B95AF807-1457-4870-8DCE-2EFAA142FFC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoLocation.Clients.ExternalApi.Nominatim", "src\GeoLocation\Clients\ExternalApi\GeoLocation.Clients.ExternalApi.Nominatim\GeoLocation.Clients.ExternalApi.Nominatim.csproj", "{A6DEB17F-1447-4971-9305-6C0062129588}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +45,8 @@ Global
 		{B6DC2E4C-B125-4165-9802-5FCBA7EE80C3} = {4A9FB420-04E0-46DD-A3C0-4B8C556FCC2B}
 		{35A0F65B-E571-49EB-8997-31CBC28EAE8D} = {219FDB90-F3D6-4EF7-AEB1-384514D6C146}
 		{9358494B-EAD6-4FF9-A178-C0FE0B75B403} = {E4EB5529-6CA5-4F6C-96B3-947CB3AB6024}
+		{B95AF807-1457-4870-8DCE-2EFAA142FFC3} = {7C9E4FEC-42DF-423C-B481-64D1FC1F00F4}
+		{A6DEB17F-1447-4971-9305-6C0062129588} = {B95AF807-1457-4870-8DCE-2EFAA142FFC3}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{B6DC2E4C-B125-4165-9802-5FCBA7EE80C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -55,5 +61,9 @@ Global
 		{9358494B-EAD6-4FF9-A178-C0FE0B75B403}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9358494B-EAD6-4FF9-A178-C0FE0B75B403}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9358494B-EAD6-4FF9-A178-C0FE0B75B403}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6DEB17F-1447-4971-9305-6C0062129588}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6DEB17F-1447-4971-9305-6C0062129588}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6DEB17F-1447-4971-9305-6C0062129588}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6DEB17F-1447-4971-9305-6C0062129588}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

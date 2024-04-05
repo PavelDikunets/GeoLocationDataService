@@ -4,15 +4,26 @@
         <TargetFramework>net7.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <DocumentationFile>Documentation.xml</DocumentationFile>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.16"/>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0"/>
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers\" />
+        <None Remove="Documentation.xml"/>
+        <Content Include="Documentation.xml">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\Application\GeoLocation.Application.AppData\GeoLocation.Application.AppData.csproj"/>
+        <ProjectReference Include="..\..\Clients\ExternalApi\GeoLocation.Clients.ExternalApi.Nominatim\GeoLocation.Clients.ExternalApi.Nominatim.csproj"/>
+        <ProjectReference Include="..\..\Contracts\GeoLocation.Contracts\GeoLocation.Contracts.csproj"/>
     </ItemGroup>
 
 </Project>
