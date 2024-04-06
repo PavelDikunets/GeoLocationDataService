@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GeoLocation.Host.Api</name>
+    </assembly>
+    <members>
+        <member name="T:GeoLocation.Host.Api.Controllers.GeoLocationController">
+            <summary>
+                Контроллер для работы с геоданными.
+            </summary>
+        </member>
+        <member name="M:GeoLocation.Host.Api.Controllers.GeoLocationController.#ctor(Microsoft.Extensions.Logging.ILogger{GeoLocation.Host.Api.Controllers.GeoLocationController},GeoLocation.Application.AppData.Contexts.GeoLocation.Services.IGeoLocationService)">
+            <summary>
+                Инициализирует экземпляр <see cref="T:GeoLocation.Host.Api.Controllers.GeoLocationController" />.
+            </summary>
+            <param name="logger">Логгер.</param>
+            <param name="geoLocationService">Сервис для получения геоданных по адресу.</param>
+        </member>
+        <member name="M:GeoLocation.Host.Api.Controllers.GeoLocationController.GetGeoLocationDataByAddressAsync(GeoLocation.Contracts.AddressDtos.AddressRequestDto,System.Threading.CancellationToken)">
+            <summary>
+                Получить геоданные по адресу.
+            </summary>
+            <param name="addressRequestDto">Модель адреса для запроса.</param>
+            <param name="cancellationToken">Токен отмены операции.</param>
+            <returns>Список геоданных (широта, долгота).</returns>
+            <response code="200">Успешный запрос.</response>
+            <response code="400">Некорректный запрос.</response>
+            <response code="500">Внутренняя ошибка сервера.</response>
+        </member>
+        <member name="M:GeoLocation.Host.Api.Controllers.GeoLocationController.GetAddressByGeoLocationDataAsync(GeoLocation.Contracts.GeoLocationDataDtos.GeoLocationDataDto,System.Threading.CancellationToken)">
+            <summary>
+                Получить ближайшие адреса по геоданным.
+            </summary>
+            <param name="geoLocationDataDto">Модель геоданных.</param>
+            <param name="cancellationToken">Токен отмены операции.</param>
+            <returns>Список ближайшийх адресов.</returns>
+            <response code="200">Успешный запрос.</response>
+            <response code="400">Некорректный запрос.</response>
+            <response code="500">Внутренняя ошибка сервера.</response>
+        </member>
+        <member name="T:GeoLocation.Host.Api.Middlewares.ExceptionMiddleware">
+            <summary>
+                Middleware для обработки исключений.
+            </summary>
+        </member>
+        <member name="M:GeoLocation.Host.Api.Middlewares.ExceptionMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Logging.ILogger{GeoLocation.Host.Api.Middlewares.ExceptionMiddleware})">
+            <summary>
+                Инициализирует экземпляр <see cref="T:GeoLocation.Host.Api.Middlewares.ExceptionMiddleware" />.
+            </summary>
+            <param name="next">Следующий middleware в конвеере.</param>
+            <param name="logger">Логгер.</param>
+        </member>
+        <member name="M:GeoLocation.Host.Api.Middlewares.ExceptionMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+                Вызов следующего middleware в конвеере и перехват исключений.
+            </summary>
+            <param name="httpContext">Контекст HTTP-запроса.</param>
+        </member>
+    </members>
+</doc>
