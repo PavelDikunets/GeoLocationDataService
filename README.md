@@ -8,7 +8,7 @@
 
 ## Технологический стек
 * Язык программирования: C#
-* Фреймворк: .NET 7.0
+* Фреймворк: ASP.NET Core
 * API и документация: OpenApi, Swashbuckle
 * Работа с данными: Dadata Api, Nominatim Api, Newtonsoft.Json
 * Логирование: Serilog с записью в файл.
