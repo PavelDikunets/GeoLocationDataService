@@ -21,11 +21,11 @@ public class OpenStreetMapService : IOpenStreetMapService
     }
 
     /// <inheritdoc />
-    public async Task<HttpResponseMessage> GetGeoLocationDataByAddressAsync(AddressDto address,
+    public async Task<HttpResponseMessage> GetGeoLocationDataByAddressAsync(AddressRequestDto addressRequest,
         CancellationToken cancellationToken)
     {
         var requestUri =
-            $"search?country={address.Country}&city={address.City}&street={address.Street}&format=json&limit=2";
+            $"search?country={addressRequest.Country}&city={addressRequest.City}&street={addressRequest.Street}&format=json&limit=2";
 
         return await _httpClient.GetAsync(requestUri, cancellationToken);
     }

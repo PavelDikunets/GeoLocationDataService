@@ -1,21 +1,21 @@
-using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 
-namespace GeoLocation.Contracts.GeoLocationDtos;
+namespace GeoLocation.Contracts.GeoLocationDataDtos;
 
 /// <summary>
-///     Модель геолокации.
+///     Модель геоданных.
 /// </summary>
-public class GeoLocationDto
+public class GeoLocationDataDto
 {
     /// <summary>
     ///     Широта.
     /// </summary>
-    [JsonProperty("lat")]
+    [Required]
     public double Latitude { get; set; }
 
     /// <summary>
     ///     Долгота.
     /// </summary>
-    [JsonProperty("lon")]
+    [Required]
     public double Longitude { get; set; }
 }

@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 namespace GeoLocation.Host.Api.Middlewares;
 
 /// <summary>
-///  Middleware для обработки исключений.
+///     Middleware для обработки исключений.
 /// </summary>
 public class ExceptionMiddleware
 {
@@ -12,7 +12,7 @@ public class ExceptionMiddleware
     private readonly RequestDelegate _next;
 
     /// <summary>
-    /// Инициализирует экземпляр <see cref="ExceptionMiddleware"/>.
+    ///     Инициализирует экземпляр <see cref="ExceptionMiddleware" />.
     /// </summary>
     /// <param name="next">Следующий middleware в конвеере.</param>
     /// <param name="logger">Логгер.</param>
@@ -23,7 +23,7 @@ public class ExceptionMiddleware
     }
 
     /// <summary>
-    /// Вызов следующего middleware в конвеере и перехват исключений.
+    ///     Вызов следующего middleware в конвеере и перехват исключений.
     /// </summary>
     /// <param name="httpContext">Контекст HTTP-запроса.</param>
     public async Task InvokeAsync(HttpContext httpContext)

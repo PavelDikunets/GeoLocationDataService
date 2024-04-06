@@ -11,8 +11,9 @@ public interface IOpenStreetMapService
     /// <summary>
     ///     Получить геоданные по адресу.
     /// </summary>
-    /// <param name="address">Адрес.</param>
+    /// <param name="addressRequest">Адрес.</param>
     /// <param name="cancellationToken">Токен отмены операции.</param>
     /// <returns>Геоданные.</returns>
-    Task<HttpResponseMessage> GetGeoLocationDataByAddressAsync(AddressDto address, CancellationToken cancellationToken);
+    Task<HttpResponseMessage> GetGeoLocationDataByAddressAsync(AddressRequestDto addressRequest,
+        CancellationToken cancellationToken);
 }
