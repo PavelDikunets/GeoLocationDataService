@@ -31,5 +31,5 @@
     `cd GeoLocationDataService`
 
 
-3. Выполнить команду `dotnet restore` для установки всех необходимых NuGet пакетов.
+3. Выполнить команду `dotnet restore`.
 4. Запустить проект с помощью команды `dotnet run`.
