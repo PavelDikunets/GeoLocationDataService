@@ -1,4 +1,4 @@
-using GeoLocation.Application.AppData.Contexts.GeoLocationData.Services;
+using GeoLocation.Application.AppData.Contexts.GeoLocation.Services;
 using GeoLocation.Clients.ExternalApi.Nominatim.Services;
 using GeoLocation.Contracts.AddressDtos;
 using GeoLocation.Host.Api.Middlewares;
@@ -14,11 +14,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddHttpClient<IOpenStreetMapService, OpenStreetMapService>();
-builder.Services.AddScoped<IGeoLocationDataService, GeoLocationDataService>();
+builder.Services.AddScoped<IGeoLocationService, GeoLocationService>();
 
 builder.Services.AddSwaggerGen(options =>
 {
-    options.SwaggerDoc("v1", new OpenApiInfo { Title = "GeoLocationDataCustomerService Api", Version = "V1" });
+    options.SwaggerDoc("v1", new OpenApiInfo { Title = "GeoLocationCustomerService Api", Version = "V1" });
     options.IncludeXmlComments(Path.Combine(Path.Combine(AppContext.BaseDirectory,
         $"{typeof(AddressDto).Assembly.GetName().Name}.xml")));
     options.IncludeXmlComments(Path.Combine(Path.Combine(AppContext.BaseDirectory, "Documentation.xml")));
@@ -26,12 +26,9 @@ builder.Services.AddSwaggerGen(options =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
