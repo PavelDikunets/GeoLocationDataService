@@ -10,21 +10,12 @@
         <ProjectReference Include="..\..\Clients\ExternalApi\GeoLocation.Clients.ExternalApi.Nominatim\GeoLocation.Clients.ExternalApi.Nominatim.csproj"/>
         <ProjectReference Include="..\..\Contracts\GeoLocation.Contracts\GeoLocation.Contracts.csproj"/>
     </ItemGroup>
-
-    <ItemGroup>
-        <Reference Include="Microsoft.Extensions.Configuration.Abstractions">
-            <HintPath>..\..\..\..\..\..\..\..\usr\lib64\dotnet\shared\Microsoft.AspNetCore.App\7.0.16\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
-        </Reference>
-        <Reference Include="Microsoft.Extensions.Logging.Abstractions">
-            <HintPath>..\..\..\..\..\..\..\..\usr\lib64\dotnet\shared\Microsoft.AspNetCore.App\7.0.16\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
-        </Reference>
-        <Reference Include="Newtonsoft.Json">
-            <HintPath>..\..\..\..\..\..\.nuget\packages\newtonsoft.json\13.0.3\lib\net6.0\Newtonsoft.Json.dll</HintPath>
-        </Reference>
-    </ItemGroup>
-
+    
     <ItemGroup>
         <PackageReference Include="Dadata" Version="23.6.1"/>
+        <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     </ItemGroup>
 
 </Project>
