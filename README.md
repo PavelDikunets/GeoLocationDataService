@@ -31,6 +31,14 @@
    `cd GeoLocationDataService`
 
 
-3. Выполнить команду `dotnet restore`.
-4. Запустить проект с помощью команды `dotnet run --project ./src/GeoLocation/Host/GeoLocation.Host.Api/GeoLocation.Host.Api.csproj`.
-5. Открыть в браузере ссылку: http://localhost:5144/swagger/
+3. Выполнить команду:
+
+`dotnet restore`
+
+4. Запустить проект с помощью команды:
+
+`dotnet run --project ./src/GeoLocation/Host/GeoLocation.Host.Api/GeoLocation.Host.Api.csproj`.
+
+5. Открыть в браузере ссылку:
+
+http://localhost:5144/swagger/
